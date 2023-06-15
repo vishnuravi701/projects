@@ -1,0 +1,83 @@
+import random
+import time
+
+total_start=time.time()
+for i in range(3):
+  a= random.randint(1,999)
+  b= random.randint(1,999)
+  start=time.time()
+  print("What is",a,"+",b, end=":")
+  c=int(input())
+  d= a+b
+  
+  if c==d:
+    print("True!")
+    
+    
+    print("The ending time is",time.time()-start)
+  else:
+    print("False")
+    end_time=time.time()
+    print("The ending time is",time.time()-start)
+
+
+for i in range(3):
+  a= random.randint(1,999)
+  b= random.randint(1,999)
+  start=time.time()
+  print("What is",a,"-",b, end=":")
+  c=int(input())
+  d= a-b
+  
+  if c==d:
+    print("True!")
+
+    
+    print("The ending time is",time.time()-start)
+  else:
+    print("False")
+    end_time=time.time()
+    print("The ending time is",time.time()-start)
+
+
+for i in range(2):
+  a= random.randint(1,12)
+  b= random.randint(1,12)
+  start=time.time()
+  print("What is",a,"*",b, end=":")
+  c=int(input())
+  d= a*b
+  
+  if c==d:
+    print("True!")
+    
+    
+    print("The ending time is",time.time()-start)
+  else:
+    print("False")
+    end_time=time.time()
+    print("The ending time is",time.time()-start)
+
+for i in range(2):
+  a= random.randint(1,20)
+  b= random.randint(1,20)
+  start=time.time()
+  print("What is",a,"/",b, end=":")
+  c=float(input())
+  d= a/b
+  f=round(d)
+  
+  if c==f:
+    print("True!")
+    
+    
+    print("The ending time is",time.time()-start)
+  else:
+    print("False")
+    end_time=time.time()
+    print("The ending time is",time.time()-start)
+
+
+print("The total time it took is",time.time()-total_start)
+    
+    

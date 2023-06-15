@@ -1,0 +1,97 @@
+from tkinter import *
+expression =""
+
+def press(num):
+  global expression
+  expression = expression + str(num)
+
+  equation.set(expression)
+
+def equalpress():
+  try:
+    global expression
+
+    total = str(eval(expression))  
+
+    equation.set(total)
+
+    expression =""
+
+  except:
+    equation.set(" error ")
+    expression=""
+
+if __name__== "__main__":
+  root= Tk()
+  
+  root.title("gui calculator")
+  
+  root.geometry("600x400")
+  
+  equation=StringVar()
+  
+  expression_show=Entry(root, textvariable=equation)
+
+  
+  add=Button(root,text="+",width=1,bg="green",command=lambda: press("+"))
+  
+  submit=Button(root,text="=",width=1,bg="red",command=equalpress)
+  
+  subtract=Button(root,text="-",width=1,bg="green",command=lambda: press("-"))
+  
+  multiply=Button(root,text="*",width=1,bg="green",command=lambda: press("*"))
+  
+  divide=Button(root,text="/",width=1,bg="green",command=lambda: press("/"))
+  
+  dot=Button(root,text=".",width=1,bg="turquoise",command=lambda: press("."))
+  
+  num0=Button(root,text="0",width=1,bg="turquoise",command=lambda: press(0))
+  
+  num1=Button(root,text="1",width=1,bg="turquoise",command=lambda: press(1))
+  
+  num2=Button(root,text="2",width=1,bg="turquoise",command=lambda: press(2))
+  
+  num3=Button(root,text="3",width=1,bg="turquoise",command=lambda: press(3))
+  
+  num4=Button(root,text="4",width=1,bg="turquoise",command=lambda: press(4))
+  
+  num5=Button(root,text="5",width=1,bg="turquoise",command=lambda: press(5))
+  
+  num6=Button(root,text="6",width=1,bg="turquoise",command=lambda: press(6))
+  
+  num7=Button(root,text="7",width=1,bg="turquoise",command=lambda: press(7))
+  
+  num8=Button(root,text="8",width=1,bg="turquoise",command=lambda: press(8))
+  
+  num9=Button(root,text="9",width=1,bg="turquoise",command=lambda: press(9))
+
+  exponential=Button(root,text="**",width=1,bg="green",command=lambda:press("**"))
+
+  modulus=Button(root,text="%",width=1,bg="green",command=lambda:press("%"))
+
+  floordivision=Button(root,text="//",width=1,bg="green",command=lambda:press("//"))
+
+  floordivision.place(x=250,y=228)
+  modulus.place(x=285,y=228)
+  exponential.place(x=321,y=228)
+  expression_show.place(x=215,y=100)
+  add.place(x=321,y=123)
+  submit.place(x=285,y=202)
+  subtract.place(x=321,y=150)
+  multiply.place(x=321,y=176)
+  divide.place(x=321,y=203)
+  dot.place(x=250,y=202)
+  num0.place(x=215,y=202)
+  num1.place(x=215,y=123)
+  num2.place(x=250,y=123)
+  num3.place(x=285,y=123)
+  num4.place(x=215,y=150)
+  num5.place(x=250,y=150)
+  num6.place(x=285,y=150)
+  num7.place(x=215,y=176)
+  num8.place(x=250,y=176)
+  num9.place(x=285,y=176)
+
+
+
+  root.mainloop()

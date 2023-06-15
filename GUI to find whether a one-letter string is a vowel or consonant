@@ -1,0 +1,33 @@
+import tkinter as tk
+from tkinter import messagebox
+root=tk.Tk()
+root.geometry("600x400")
+root.title("hello")
+
+letter=tk.StringVar()
+
+
+def submit():
+    name=letter.get()
+    if len(name) <=2:
+      messagebox.showinfo("Result", f"{name} is an invalid input")
+      return
+    if name in ('a', 'e', 'i', 'o', 'u'):
+	    messagebox.showinfo("Result", f"{name} is a vowel")
+    else:
+	    messagebox.showinfo("Result", f"{name} is a consonant")
+  
+    letter.set("")
+
+name_label = tk.Label(root, text = 'letter', )
+
+name_entry = tk.Entry(root,textvariable = letter)
+
+sub_btn=tk.Button(root,text = 'Submit', command = submit)
+
+name_label.grid(row=0,column=0)
+name_entry.grid(row=0,column=1)
+sub_btn.grid(row=2,column=1)
+
+
+root.mainloop()
